@@ -1,0 +1,4 @@
+chr1	10000	30000	chr1	70000	90000	bedpe_example1	30	.	.
+chr1	60000	70000	chr1	110000	130000	bedpe_example2	70	.	.
+chr2	60000	80000	chr2	120000	140000	bedpe_example3	30	.	.
+chr2	110000	120000	chr2	160000	180000	bedpe_example4	70	.	.
