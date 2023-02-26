@@ -43,4 +43,4 @@ chromosome, then calls `bedpe_row_to_cluster()` once for each row in each group.
 to avoid a dependency on `hic3defdr` in this minimal example, but if you have
 `hic3defdr` installed you can delete them both and replace them with
 
-    from hic3defdr.util.clusters import save_clusters()
+    from hic3defdr.util.clusters import save_clusters
