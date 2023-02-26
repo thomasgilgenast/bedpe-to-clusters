@@ -82,7 +82,6 @@ def bedpe_row_to_cluster(
 
     Examples
     --------
-    
     >>> # exactly one pixel
     >>> bedpe_row_to_cluster(
     ...     pd.Series(
