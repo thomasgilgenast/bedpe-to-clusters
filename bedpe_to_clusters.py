@@ -79,6 +79,28 @@ def bedpe_row_to_cluster(
         Each tuple in the set represents a pixel in the cluster as an
         `(int, int)` pair where the integers refer to the 0-based bin indices of
         the contact matrix that identify the pixel.
+
+    Examples
+    --------
+    
+    >>> # exactly one pixel
+    >>> bedpe_row_to_cluster(
+    ...     pd.Series(
+    ...         ['chr1', 10000, 20000, 'chr1', 10000, 20000],
+    ...         index=['chrom1', 'start1', 'end1', 'chrom2', 'start2', 'end2']
+    ...     ),
+    ...     10000,
+    ... )
+    {(1, 1)}
+    >>> # add one base pair -> now we need one additional pixel to cover it
+    >>> bedpe_row_to_cluster(
+    ...     pd.Series(
+    ...         ['chr1', 10000, 20000, 'chr1', 10000, 20001],
+    ...         index=['chrom1', 'start1', 'end1', 'chrom2', 'start2', 'end2']
+    ...     ),
+    ...     10000,
+    ... )
+    {(1, 1), (1, 2)}
     """
     row_min = np.floor(bedpe_row["start1"] / matrix_resolution).astype(int)
     col_min = np.floor(bedpe_row["start2"] / matrix_resolution).astype(int)
