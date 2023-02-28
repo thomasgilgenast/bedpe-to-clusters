@@ -40,7 +40,7 @@ def bedpe_to_clusters(
     )
 
     # identify set of all chromosomes
-    chroms = set(bedpe_df.chrom1.unique()).union(set(bedpe_df.chrom1.unique()))
+    chroms = set(bedpe_df.chrom1.unique()).union(set(bedpe_df.chrom2.unique()))
 
     return {
         # one key, value pair per chromosome
